@@ -6,15 +6,11 @@
   <div class="page" style="margin-top: 0px; font-size: 7pt; ">
 
     <div style="border: 1px solid black;">
-      <p style="text-indent: 5px;">  Aussteller (Bezeichnung und Anschrift der steuerbegünstigten Einrichtung) </p>
       <p style="text-indent: 5px;">
-        <span style="font-size:10 pt"> Humanitarian Logistics Organisation e.V., Herzmoorwende 9, 22417 Hamburg </span>
-<!-- Verknüfungen zu den Feldern fehlen
-<span t-field="company.partner_id.name" />
-  <span t-field="company.partner_id.street" />
-  <span t-field="company.partner_id.zip" />
-  <span t-field="company.partner_id.city" />
-  -->
+        <span t-field="o.company_id.partner_id.name" />
+        <span t-field="o.company_id.partner_id.street" />
+        <span t-field="o.company_id.partner_id.zip" />
+        <span t-field="o.company_id.partner_id.city" />
       </p>
     </div>
 
@@ -114,7 +110,7 @@
     <br/>
     <br/>
     <br/>
-<!-- <span t-field="company.partner_id.city" /> -->
+    <span t-field="o.company_id.partner_id.city" />
     <span style="font-size: 10pt"> Hamburg, </span> <span style="font-size: 10pt" t-esc="time.strftime('%d.%m.%Y')"/>
     <p style="border-top: 1px solid black; text-indent: 5px;"> (Ort, Datum und Unterschrift des Zuwendungsempfängers) </p>
     <br/>
