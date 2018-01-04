@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+  <t t-name="donation_base.report_donationtaxreceipt">
+  <t t-foreach="docs" t-as="o">
+
+
+  <div class="page" style="margin-top: 0px; font-size: 7pt; ">
+
+    <div style="border: 1px solid black;">
+      <p style="text-indent: 5px;">  Aussteller (Bezeichnung und Anschrift der steuerbegünstigten Einrichtung) </p>
+      <p style="text-indent: 5px;">
+        <span style="font-size:10 pt"> Humanitarian Logistics Organisation e.V., Herzmoorwende 9, 22417 Hamburg </span>
+<!-- Verknüfungen zu den Feldern fehlen
+<span t-field="company.partner_id.name" />
+  <span t-field="company.partner_id.street" />
+  <span t-field="company.partner_id.zip" />
+  <span t-field="company.partner_id.city" />
+  -->
+      </p>
+    </div>
+
+    <br/>
+    <strong style="text-indent: 15px; font-size: 7pt"> Bestätigung über Geldzuwendungen/ Mitgliedsbeitrag </strong> <br/>
+    <p> im Sinne des § 10b des Einkommenssteuergesetztes an eine der in § 5 Abs. 1 Nr. 9 des Körperschaftsteuergesetzes bezeichneten Körperschaften, Personenvereinigungen oder Vermögensmassen </p>
+    <br/>
+    <div style="border: 1px solid black;">
+      <p style="text-indent: 5px;"> Name und Anschrift des Zuwendenden: </p>
+      <p style="text-indent: 5px; font-size: 10pt">
+        <span t-field="o.partner_id.name" > </span>,
+        <span t-field="o.partner_id.street"> </span>,
+        <span t-field="o.partner_id.zip"> </span> <span t-field="o.partner_id.city"> </span>
+      </p>
+    </div>
+    <br/>
+
+    <span class="col-xs-4" style="border: 1px solid black">
+      <p> Betrag der Zuwendung -in Ziffern- </p>
+      <p> <span style="font-size:10 pt" t-field="o.amount" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.currency_id&quot;}"/> </p> <!-- t-field amount-->
+    </span>
+    <span class="col-xs-4" style="border: 1px solid black">
+      <p> - in Buchstaben - </p>
+      <p style="font-size: 10pt">
+        Dreihundert,NullNull
+<!-- Num2Word Converter py -->
+     </p>
+
+    </span>
+    <span class="col-xs-4" style="border: 1px solid black">
+      <p> Tag der Zuwendung: </p>
+      <p> <span style="font-size: 10pt" t-field="o.donation_date"/></p>
+    </span>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <p style="text-indent: -8px;">
+      <span class="col-xs-6" style="text-left"> Es handelt sich um den Verzicht auf Erstattung von Auswendungen</span>
+      <span class="col-xs-3" style="text-right"> Ja  <input type="checkbox" /> </span>
+      <span class="col-xs-3" style="text-left"> Nein <input type="checkbox" checked="checked"/> </span>
+    </p>
+    <br/>
+    <br/>
+    <br/>
+    <p>
+      <div class="col-xs-1 "> <input type="checkbox" id="oe_import_tracking" checked="checked"/> </div>
+      <div class="col-xs-11" style=" text-left" >  Wir sind wegen Förderung Wissenschaft und Forschung, Katastrophenschutz und Entwicklungszusammenarbeit nach dem Freistellungsbescheid bzw. nach der Anlage zum Körperschaftsteuerbescheid des Finanzamtes Hamburg–Nord 17, Steuernummer 17/430/15815 vom 13.01.2016 für den letzten Veranlagungszeitraum 2014 nach § 5 Abs. 1 Nr. 9 des Körperschaftsteuergesetzes von der Körperschaftsteuer und nach § 3 Nr. 6 des Gewerbesteuergesetzes von der Gewerbesteuer befreit.
+<!--t-field für Zweck -->  <!--> t-field für Finanzamt --> <!-- t-field für UStd. --> <!-- Feld für Dok-Datum -->
+
+     </div>
+    </p>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+
+    <p>
+      <div class="col-xs-1"> <input type="checkbox" id="oe_import_tracking"/> </div>
+      <div class="col-xs-11" style="text-left">
+        Die Einhaltung der satzungsmäßigen Voraussetzungen nach den §§ 51, 59, 60 und 61 AO wurde vom Finanzamt Hamburg-Nord 17, Steuernummer 17/430/15815 mit Bescheid vom 20.02.2014 nach § 60a AO gesondert festgestellt. Wir fördern nach unserer Satzung Wissenschaft und Forschung, Katastrophenschutz und Entwicklungszusammenarbeit (§ 52 Abs. 2 Satz 1 Nr. (n) 1, 10, 15 AO).
+<!--t-field für Zweck -->  <!--> t-field für Finanzamt --> <!-- t-field für UStd. --> <!-- Feld für Dok-Datum -->
+
+      </div>
+    </p>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <div style="border: 1px solid black;">
+      <p style="text-indent: 5px;"> Es wir bestätigt, dass die Zuwendung nur zur Forderung (Angabe des begünstiten Zwecks/ der begünstigten Zwecke) </p>
+
+      <p style="text-indent: 5px;"><strong>  Wissenschaft und Forschung, Katastrophenschutz und Entwicklungszusammenarbeit </strong></p>
+<!-- t-field für Zweck -->
+      <p style="text-indent: 5px;"> verwendet wird. </p>
+
+      <p style="text-indent: 5px;"> <strong > Nur für steuerbegünstigte Einrichtungen, bei denen die Mitgliedsbeiträge steuerlich nicht absetzbar sind: </strong> </p>
+      <p style="text-indent: 5px;">
+       <input type="checkbox" id="oe_import_tracking" checked="checked"/> Es wird bestätigt, dass es sich nicht um einen Mitgliedsbeitrag handelt, dessen Abzug nach § 10b Abs. 1 des Einkommenssteuergesetztes <span style="text-indent: 22px; "> ausgeschlossen ist. </span> </p>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+
+    <div t-if="o.type == 'annual'" > <p> Es wird bestätigt, dass über die in der Gesamtsumme enthaltenen Zuwendungen keine weiteren Bestätigungen, weder formelle
+    Zuwendungsbestätigungen noch Beitragsquittungen oder Ähnliches ausgestellt wurden und werden. <br/>
+    Ob es sich um den Verzicht auf Erstattung von Aufwendungen handelt, ist der Anlage zur Sammelbestätigung zu entnehmen.
+    </p>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+<!-- <span t-field="company.partner_id.city" /> -->
+    <span style="font-size: 10pt"> Hamburg, </span> <span style="font-size: 10pt" t-esc="time.strftime('%d.%m.%Y')"/>
+    <p style="border-top: 1px solid black; text-indent: 5px;"> (Ort, Datum und Unterschrift des Zuwendungsempfängers) </p>
+    <br/>
+    <br/>
+    <strong> Hinweis: </strong>
+    <br/>
+    <p> Wer vorsätzlich oder grob fahrlässig eine unrichtige Zuwendungsbestätigung erstellt oder veranlasst, dass Zuwendungen nicht zu den in der
+    Zuwendungsbestätigung angegebenen steuerbegünstigten Zwecken verwendet werden, haftet für die entgangene Steuer (§ 10b Abs. 4 EStG, § 9 Abs. 3 KStG, § 9 Nr. 5 GewStG).
+    </p>
+
+    <p> Diese Bestätigung wird nicht als Nachweis für die steuerliche Berücksichtigung der Zuwendung anerkannt, wenn das Datum des Freistellungs-bescheides länger als 5 Jahre bzw.
+      <strong> das Datum der Feststellung der Einhaltung der satzungsmäßigen Voraussetzungen nach § 60a Abs. 1 AO länger als 3 Jahre seit Ausstellung des Bescheides zurückliegt (§ 63 Abs. 5 AO).
+      </strong>
+    </p>
+
+    <div t-if="o.type == 'annual'" >
+      <strong> Anlage zur Sammelbestätigung </strong>
+      <table class="table  table-bordered" style="font-size: 7pt;">
+
+          <tr>
+              <th class="text-left; col-xs-3">Datum der Zuwendung</th>
+              <th class="text-left; col-xs-3">Art der Geldzuwendung <strong> (Geldzuwendung/Mitgliedsbeitrag)</strong></th>
+              <th class="text-left; col-xs-3">Verzicht auf die Erstattung von Aufwendungen? (ja/nein)</th>
+              <th class="text-center; col-xs-3">Betrag </th>
+          </tr>
+
+          <tbody>
+              <tr t-foreach="o.donation_ids" t-as="line">
+                  <td>
+                      <span t-field="line.donation_date" />
+                  </td>
+                  <td class="text-left">
+                      <span t-field="line.campaign_id" />
+                  </td>
+                  <td class="text-center">
+                    <span t-if="line.line_ids.product_id.name == 'Geldzuwendungen ohne Zuwendungsbestätigung'" >  Ja </span>
+                    <span t-if="line.line_ids.product_id.name != 'Geldzuwendungen ohne Zuwendungsbestätigung'"> Nein </span>
+                  </td>
+
+                  <td class="text-center">
+                      <span t-field="line.amount_total" />
+                  </td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+
+      </div>
+
+
+  </t>
+
+
+  </t>
+
