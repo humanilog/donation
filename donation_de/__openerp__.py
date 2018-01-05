@@ -16,6 +16,6 @@
         "donation",
     ],
     "data": [
-        'views/report.xml'
+        'report/report.xml'
     ],
 }
