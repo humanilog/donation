@@ -2,7 +2,6 @@
 <openerp>
   <data>
     <template id="report_donationtaxreceipt_de" inherit_id="donation_base.report_donationtaxreceipt">
-      <div class="page" style=" ">
       <xpath expr="//div[@class='page']" position="attributes">
         <attribute name="style">style="margin-top: 0px; font-size: 7pt;"</attribute>
       </xpath>
