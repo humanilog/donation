@@ -15,8 +15,11 @@
     "depends": [
         "donation",
     ],
+    'external_dependencies': {
+        'python': ['num2words'],
+    },
     "data": [
-        'report/report.xml',
+        'report/report_donationtax_de.xml',
         'views/donation_views.xml'
     ],
 }

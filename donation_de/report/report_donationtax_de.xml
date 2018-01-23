@@ -36,8 +36,7 @@
         <span class="col-xs-4" style="border: 1px solid black">
           <p> - in Buchstaben - </p>
           <p style="font-size: 10pt">
-            Dreihundert,NullNull
-<!-- Num2Word Converter py -->
+            <span t-esc="num2words_de(o.amount)"/>
          </p>
 
         </span>
