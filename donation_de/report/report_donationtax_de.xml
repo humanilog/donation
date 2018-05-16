@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <odoo>
-    <template id="report_donationtaxreceipt_de" inherit_id="donation_base.report_donationtaxreceipt">
+    <template id="report_donationtaxreceipt_de" inherit_id="donation_base.report_donationtaxreceipt_document">
       <xpath expr="//div[@class='page']" position="attributes">
         <attribute name="style">style="margin-top: 0px; font-size: 7pt;"</attribute>
       </xpath>
