@@ -4,7 +4,7 @@
 {
     "name": "Donation DE",
     "summary": "Everything you need for managing donations in Germany",
-    "version": "9.0.1.0.0",
+    "version": "10.0.1.0.0",
     "category": "Donation Management",
     'website': 'http://www.humanilog.org',
     'author': 'Humanilog, '
@@ -14,6 +14,7 @@
     "installable": True,
     "depends": [
         "donation",
+        "account_accountant"
     ],
     'external_dependencies': {
         'python': ['num2words'],
