@@ -30,7 +30,7 @@
 
         <span class="col-xs-4" style="border: 1px solid black">
           <p> Betrag der Zuwendung -in Ziffern- </p>
-          <p> <span style="font-size:10 pt" t-field="o.amount" t-field-options="{&quot;widget&quot;: &quot;monetary&quot;, &quot;display_currency&quot;: &quot;o.currency_id&quot;}"/> </p> <!-- t-field amount-->
+          <p> <span style="font-size:10 pt" t-field="o.amount" t-field-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/> </p> <!-- t-field amount-->
         </span>
         <span class="col-xs-4" style="border: 1px solid black">
           <p> - in Buchstaben - </p>
