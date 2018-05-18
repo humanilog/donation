@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_company_form">
+            <field name="name">res.company.donation.form</field>
+            <field name="model">res.company</field>
+            <field name="inherit_id" ref="donation_base.view_company_form"/>
+            <field name="arch" type="xml">
+                <field name="donation_eligibility_purpose" position="after">
+                    <field name="responsible_tax_authority"/>
+                    <field name="current_certificate_of_tax_exemption"/>
+                </field>
+            </field>
+      </record>
+    </data>
+</odoo>

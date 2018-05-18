@@ -10,6 +10,5 @@ class ResCompany(models.Model):
 
     responsible_tax_authority = fields.Char(
         string=_('Responsible Tax Authority'))
-    non_profit_purpose = fields.Char(string=_('Non-Profit Purpose'))
     current_certificate_of_tax_exemption = fields.Date(
         string=_('current certificate of tax exemption'))

@@ -21,6 +21,7 @@
         'data/donation_mail_template.xml',
         'views/product.xml',
         'views/partner.xml',
+        'views/company.xml',
         'views/donation_tax_receipt.xml',
         'wizard/tax_receipt_annual_create_view.xml',
         'wizard/tax_receipt_print_view.xml',
