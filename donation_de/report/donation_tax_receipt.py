@@ -14,11 +14,10 @@ class ReportDonationTaxReceipt(models.AbstractModel):
     def render_html(self, docids, data=None):
         report_obj = self.env['report']
         report_name = '.'.join(self._name.split('.')[1:])
-        report = report_obj._get_report_from_name(report_name)
         docargs = {
             'doc_ids': docids,
-            'doc_model': report.model,
-            'docs': self.env['donation.tax.receipt'].browse(self._ids),
+            'doc_model': 'donation.tax.receipt',
+            'docs': self.env['donation.tax.receipt'].browse(docids),
             'num2words_de': partial(num2words, lang='de')
         }
         return report_obj.render(report_name, docargs)
