@@ -21,6 +21,6 @@
     },
     "data": [
         'report/report_donationtax_de.xml',
-        'views/donation_views.xml'
+        'views/company.xml',
     ],
 }
