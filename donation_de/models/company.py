@@ -12,3 +12,5 @@ class ResCompany(models.Model):
         string=_('Responsible Tax Authority'))
     current_certificate_of_tax_exemption = fields.Date(
         string=_('current certificate of tax exemption'))
+    last_assessment_period = fields.Char(
+        string=_('Last assessment period'))
