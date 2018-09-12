@@ -9,6 +9,7 @@
                 <field name="donation_eligibility_purpose" position="after">
                     <field name="responsible_tax_authority"/>
                     <field name="current_certificate_of_tax_exemption"/>
+                    <field name="last_assessment_period"/>
                 </field>
             </field>
       </record>
