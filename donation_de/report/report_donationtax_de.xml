@@ -1,10 +1,8 @@
 <?xml version="1.0"?>
 <odoo>
     <template id="report_donationtaxreceipt_de" inherit_id="donation_base.report_donationtaxreceipt_document">
-      <xpath expr="//div[@class='page']" position="attributes">
-        <attribute name="style">style="margin-top: 0px; font-size: 7pt;"</attribute>
-      </xpath>
-      <xpath expr="//div[@class='page']" position="inside">
+      <xpath expr="//div[@class='page']" position="replace">
+        <div class="page" style="margin-top: 0px; font-size: 7pt;">
         <div style="border: 1px solid black;">
           <p style="text-indent: 5px;">
             <span t-field="o.company_id.partner_id.name" />
@@ -61,9 +59,11 @@
         <br/>
         <p>
           <div class="col-xs-1 "> <input type="checkbox" id="oe_import_tracking" checked="checked"/> </div>
-          <div class="col-xs-11" style=" text-left" >  Wir sind wegen Förderung Wissenschaft und Forschung, Katastrophenschutz und Entwicklungszusammenarbeit nach dem Freistellungsbescheid bzw. nach der Anlage zum Körperschaftsteuerbescheid des Finanzamtes Hamburg–Nord 17, Steuernummer 17/430/15815 vom 13.01.2016 für den letzten Veranlagungszeitraum 2014 nach § 5 Abs. 1 Nr. 9 des Körperschaftsteuergesetzes von der Körperschaftsteuer und nach § 3 Nr. 6 des Gewerbesteuergesetzes von der Gewerbesteuer befreit.
-<!--t-field für Zweck -->  <!--> t-field für Finanzamt --> <!-- t-field für UStd. --> <!-- Feld für Dok-Datum -->
-
+          <div class="col-xs-11" style=" text-left">
+            Wir sind wegen Förderung <span t-field="o.company_id.donation_eligibility_purpose" /> nach dem Freistellungsbescheid bzw. nach der Anlage zum Körperschaftsteuerbescheid 
+            des Finanzamtes <span t-field="o.company_id.responsible_tax_authority" />, Steuernummer <span t-field="o.company_id.vat" /> vom <span t-field="o.company_id.current_certificate_of_tax_exemption" /> für den 
+            <!-- TODO current_certificate_of_tax_exemption muss dd.mm.yyyy formatiert werden (bei mir aktuell mm.dd.yyyy) -->
+            letzten Veranlagungszeitraum <span t-field="o.company_id.last_assessment_period" /> nach § 5 Abs. 1 Nr. 9 des Körperschaftsteuergesetzes von der Körperschaftsteuer und nach § 3 Nr. 6 des Gewerbesteuergesetzes von der Gewerbesteuer befreit.
          </div>
         </p>
         <br/>
@@ -75,9 +75,9 @@
         <p>
           <div class="col-xs-1"> <input type="checkbox" id="oe_import_tracking"/> </div>
           <div class="col-xs-11" style="text-left">
-            Die Einhaltung der satzungsmäßigen Voraussetzungen nach den §§ 51, 59, 60 und 61 AO wurde vom Finanzamt Hamburg-Nord 17, Steuernummer 17/430/15815 mit Bescheid vom 20.02.2014 nach § 60a AO gesondert festgestellt. Wir fördern nach unserer Satzung Wissenschaft und Forschung, Katastrophenschutz und Entwicklungszusammenarbeit (§ 52 Abs. 2 Satz 1 Nr. (n) 1, 10, 15 AO).
-<!--t-field für Zweck -->  <!--> t-field für Finanzamt --> <!-- t-field für UStd. --> <!-- Feld für Dok-Datum -->
-
+            Die Einhaltung der satzungsmäßigen Voraussetzungen nach den §§ 51, 59, 60 und 61 AO wurde 
+            vom Finanzamt <span t-field="o.company_id.responsible_tax_authority" />, Steuernummer <span t-field="o.company_id.vat" /> mit Bescheid vom <span t-field="o.company_id.current_certificate_of_tax_exemption" /> nach § 60a AO gesondert festgestellt.
+            Wir fördern nach unserer Satzung <span t-field="o.company_id.donation_eligibility_purpose" /> (§ 52 Abs. 2 Satz 1 Nr. (n) 1, 10, 15 AO).
           </div>
         </p>
         <br/>
@@ -89,13 +89,12 @@
         <div style="border: 1px solid black;">
           <p style="text-indent: 5px;"> Es wir bestätigt, dass die Zuwendung nur zur Forderung (Angabe des begünstiten Zwecks/ der begünstigten Zwecke) </p>
 
-          <p style="text-indent: 5px;"><strong>  Wissenschaft und Forschung, Katastrophenschutz und Entwicklungszusammenarbeit </strong></p>
-<!-- t-field für Zweck -->
+          <p style="text-indent: 5px;"><strong><span t-field="o.company_id.donation_eligibility_purpose" /></strong></p>
           <p style="text-indent: 5px;"> verwendet wird. </p>
 
           <p style="text-indent: 5px;"> <strong > Nur für steuerbegünstigte Einrichtungen, bei denen die Mitgliedsbeiträge steuerlich nicht absetzbar sind: </strong> </p>
           <p style="text-indent: 5px;">
-           <input type="checkbox" id="oe_import_tracking" checked="checked"/> Es wird bestätigt, dass es sich nicht um einen Mitgliedsbeitrag handelt, dessen Abzug nach § 10b Abs. 1 des Einkommenssteuergesetztes <span style="text-indent: 22px; "> ausgeschlossen ist. </span> </p>
+           <input type="checkbox" id="oe_import_tracking" checked="unchecked"/> Es wird bestätigt, dass es sich nicht um einen Mitgliedsbeitrag handelt, dessen Abzug nach § 10b Abs. 1 des Einkommenssteuergesetztes <span style="text-indent: 22px; "> ausgeschlossen ist. </span> </p>
         </div>
         <br/>
         <br/>
@@ -109,8 +108,9 @@
         <br/>
         <br/>
         <br/>
-        <span t-field="o.company_id.partner_id.city" />
-        <span style="font-size: 10pt"> Hamburg, </span> <span style="font-size: 10pt" t-esc="time.strftime('%d.%m.%Y')"/>
+        <span style="font-size: 10pt">
+          <span t-field="o.company_id.partner_id.city" />, <span t-esc="time.strftime('%d.%m.%Y')"/><!-- TODO hier sollte das print date hin-->
+        </span>
         <p style="border-top: 1px solid black; text-indent: 5px;"> (Ort, Datum und Unterschrift des Zuwendungsempfängers) </p>
         <br/>
         <br/>
@@ -156,6 +156,7 @@
               </tbody>
             </table>
           </div>
+        </div>
       </xpath>
     </template>
 </odoo>
