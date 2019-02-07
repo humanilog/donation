@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Donation DE",
-    "summary": "Everything you need for managing donations in Germany",
+    "summary": "Localisation for managing donations in Germany",
     "version": "10.0.1.0.0",
     "category": "Donation Management",
     'website': 'http://www.humanilog.org',
@@ -22,5 +22,6 @@
     "data": [
         'report/report_donationtax_de.xml',
         'views/company.xml',
+        'data/nonprofit.purpose.csv',
     ],
 }

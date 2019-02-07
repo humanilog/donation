@@ -4,13 +4,29 @@
         <record model="ir.ui.view" id="view_company_form">
             <field name="name">res.company.donation.form</field>
             <field name="model">res.company</field>
-            <field name="inherit_id" ref="donation_base.view_company_form"/>
+            <field name="inherit_id" ref="base.view_company_form"/>
             <field name="arch" type="xml">
-                <field name="donation_eligibility_purpose" position="after">
-                    <field name="responsible_tax_authority"/>
-                    <field name="current_certificate_of_tax_exemption"/>
-                    <field name="last_assessment_period"/>
-                </field>
+                <notebook position="inside">
+                    <page name="nonprofit_details" string="Non-Profit Details">
+                        <group>
+                            <group string="General">
+                                <field name="responsible_tax_authority"/>
+                                <field name="authorized_representative"/>
+                            </group>
+                            <group string="Exemption details">
+                                <field name="ao_check_date"/>
+                                <field name="notice_of_exemption_received"/>
+                                <field name="current_certificate_of_tax_exemption"
+                                    attrs="{'invisible': [('notice_of_exemption_received', '=', False)]}"/>
+                                <field name="last_assessment_period"
+                                    attrs="{'invisible': [('notice_of_exemption_received', '=', False)]}"/>
+                            </group>
+                        </group>
+                        <group string="Donation Elegibility Purpose/s">
+                            <field name="nonprofit_purpose_ids" widget="many2many_tags" nolabel="1" options="{'no_create_edit': True}" placeholder="Purposes..."/>
+                        </group>
+                    </page>
+                </notebook>
             </field>
       </record>
     </data>
